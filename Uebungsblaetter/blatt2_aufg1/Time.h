@@ -12,25 +12,22 @@
 
 class Time
 {
-	private:
-		int hour;
-		int minute;
-		int second;
-		void checkTime();
 	public:
-//		Time(int hour = 0, int minute = 0, int second = 0): hour(hour), second(second), minute(minute){};
 		Time();
-		Time(int hour, int minute, int second);
-		void add(Time t2);
-		void addHours(int hours);
-		void addMinutes(int minutes);
-		void addSeconds(int seconds);
+		Time(int, int, int);
+		void add(Time);
+		void addHours(int);
+		void addMinutes(int);
+		void addSeconds(int);
 		int justSeconds();
-		int diff(Time t2);
+		int diff(Time);
 		void printTime();
 
+	private:
+		int _hour;
+		int _minute;
+		int _second;
+		void checkTime();
 };
-
-
 
 #endif /* TIME_H_ */

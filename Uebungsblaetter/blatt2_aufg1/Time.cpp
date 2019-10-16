@@ -10,77 +10,49 @@
 
 Time::Time()
 {
-	hour = 0;
-	minute = 0;
-	second = 0;
+	_hour = 0;
+	_minute = 0;
+	_second = 0;
 }
 
 Time::Time(int hour, int minute, int second)
 {
-	this->hour = hour;
-	this->minute = minute;
-	this->second = second;
+	_hour = hour;
+	_minute = minute;
+	_second = second;
 }
 
-void Time::checkTime()
-{
-	//check negative values
-	if(hour < 0)
-	{
-		hour = 0;
-		minute = 0;
-		second = 0;
-	}
-	if(minute < 0)
-	{
-		minute = 0;
-		second = 0;
-	}
-	if(second < 0)
-		second = 0;
-	//check minute overflow
-	if(minute > 59)
-	{
-		hour += minute/60;
-		minute %= 60;
-	}
-	//check second overflow
-	if(second > 59)
-	{
-		minute += second/60;
-		second %= 60;
-	}
-}
+
 
 void Time::add(Time t2)
 {
-	hour += t2.hour;
-	minute += t2.minute;
-	second += t2.second;
+	_hour += t2._hour;
+	_minute += t2._minute;
+	_second += t2._second;
 	checkTime();
 }
 
 void Time::addHours(int hours)
 {
-	hour += hours;
+	_hour += hours;
 	checkTime();
 }
 
 void Time::addMinutes(int minutes)
 {
-	minute += minutes;
+	_minute += minutes;
 	checkTime();
 }
 
 void Time::addSeconds(int seconds)
 {
-	second += seconds;
+	_second += seconds;
 	checkTime();
 }
 
 int Time::justSeconds()
 {
-	return hour*60*60 + minute * 60 + second;
+	return _hour*60*60 + _minute * 60 + _second;
 }
 
 int Time::diff(Time t2)
@@ -90,5 +62,35 @@ int Time::diff(Time t2)
 
 void Time::printTime()
 {
-	std::cout << "The time is: " << hour << "h " << minute << "m " << second << "s " << std::endl;
+	std::cout << "The time is: " << _hour << "h " << _minute << "m " << _second << "s " << std::endl;
+}
+
+void Time::checkTime()
+{
+	//check negative values
+	if(_hour < 0)
+	{
+		_hour = 0;
+		_minute = 0;
+		_second = 0;
+	}
+	if(_minute < 0)
+	{
+		_minute = 0;
+		_second = 0;
+	}
+	if(_second < 0)
+		_second = 0;
+	//check minute overflow
+	if(_minute > 59)
+	{
+		_hour += _minute/60;
+		_minute %= 60;
+	}
+	//check second overflow
+	if(_second > 59)
+	{
+		_minute += _second/60;
+		_second %= 60;
+	}
 }
