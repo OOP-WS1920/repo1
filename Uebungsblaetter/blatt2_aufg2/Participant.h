@@ -19,7 +19,7 @@ class Participant
 		~Participant();
 		std::string getName();
 		Time getTime();
-		int getNumberOfParticipants();
+		static int getNumberOfParticipants();
 		void setTime(int);
 
 	private:

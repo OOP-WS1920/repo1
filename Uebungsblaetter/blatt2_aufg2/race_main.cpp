@@ -32,7 +32,7 @@ int main(int argc, const char* argv[])
 	//output
 	cout
 	<< "Number of participants: "
-	<< participants.at(0).getNumberOfParticipants()
+	<< Participant::getNumberOfParticipants()
 	<< endl;
 
 	for(size_t i = 0; i < participants.size(); i++)

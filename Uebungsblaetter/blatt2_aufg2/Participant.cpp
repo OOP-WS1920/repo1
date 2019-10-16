@@ -23,7 +23,7 @@ Participant::Participant(Time time, std::string name)
 
 Participant::~Participant()
 {
-//	_participantCounter--;
+	_participantCounter--;
 }
 
 std::string Participant::getName()
