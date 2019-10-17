@@ -41,6 +41,12 @@ int Participant::getNumberOfParticipants()
 	return _participantCounter;
 }
 
+Participant::Participant(const Participant& other) {
+	_time = other._time;
+	_name = other._name;
+	_participantCounter++;
+}
+
 void Participant::setTime(int seconds)
 {
 	_time.addSeconds(seconds);

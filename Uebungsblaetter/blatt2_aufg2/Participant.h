@@ -17,6 +17,7 @@ class Participant
 		Participant();
 		Participant(Time, std::string);
 		~Participant();
+		Participant(const Participant&);
 		std::string getName();
 		Time getTime();
 		static int getNumberOfParticipants();
