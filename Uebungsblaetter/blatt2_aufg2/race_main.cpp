@@ -50,6 +50,6 @@ int main(int argc, const char* argv[])
 	<< participants.at(winnerPos).getName()
 	<< " with "
 	<< participants.at(winnerPos).getTime().justSeconds()
-	<< " seconds"
+	<< " secondsss"
 	<< endl;
 }
