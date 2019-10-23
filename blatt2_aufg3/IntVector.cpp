@@ -28,7 +28,7 @@ int& IntVector::at(size_t idx) {
 }
 
 void IntVector::out() {
-	for(size_t i; i < _arraySize; i++)
+	for(size_t i = 0; i < _arraySize; i++)
 	{
 		std::cout << _intArray[i] << std::endl;
 	}
