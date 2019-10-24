@@ -7,34 +7,6 @@
 
 #include "IntVector.h"
 
-//void klappt()
-//{
-//	IntVector test(17);
-//	for(size_t i = 0; i < 17; i++)
-//	{
-//		test.at(i) = i;
-//	}
-//	std::cout << test.size() << std::endl << std::endl;
-//	test.out();
-//	std::cout << std::endl;
-//	for(size_t i = 0; i < 17; i+=2)
-//	{
-//		test.at(i) = i + 42;
-//	}
-//	std::cout << test.size() << std::endl << std::endl;
-//	test.out();
-//}
-//
-//void crash()
-//{
-//	IntVector test(17);
-//	for(size_t i = 0; i < 17; i++)
-//	{
-//		test.at(i) = i;
-//	}
-//	std::cout << test.at(42) << std::endl;
-//}
-
 void testAssignOperator()
 {
 	IntVector test1(17);
@@ -43,17 +15,23 @@ void testAssignOperator()
 	{
 		test1.at(i) = i;
 	}
-	for(size_t i = 0; i < test2.size(); i+=2)
+	for(size_t i = 0; i < test2.size(); i++)
 	{
-		test2.at(i) = i + 42;
+		test2.at(i) = 3*i;
 	}
 	test1.out();
 	test2.out();
+
+	std::cout << std::endl <<  "after assigning" << std::endl << std::endl;
+
+	test1 = test2;
+	test1.out();
+	test2.out();
+
 }
 
 int main(int argc, char* argv[])
 {
-//	klappt();
 	testAssignOperator();
 }
 

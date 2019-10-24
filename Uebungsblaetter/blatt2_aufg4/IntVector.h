@@ -19,6 +19,7 @@ public:
 	int& at(size_t idx);
 	void out();
 	IntVector& operator= (const IntVector&);
+	IntVector(const IntVector&);
 private:
 	int* _intArray;
 	size_t _arraySize;

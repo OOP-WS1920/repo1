@@ -30,8 +30,9 @@ int& IntVector::at(size_t idx) {
 void IntVector::out() {
 	for(size_t i = 0; i < _arraySize; i++)
 	{
-		std::cout << _intArray[i] << std::endl;
+		std::cout << _intArray[i] << " ";
 	}
+	std::cout << std::endl;
 }
 
 IntVector& IntVector::operator= (const IntVector& other)
@@ -47,4 +48,7 @@ IntVector& IntVector::operator= (const IntVector& other)
 		}
 	}
 	return *this;
+}
+
+IntVector::IntVector(const IntVector&) {
 }
