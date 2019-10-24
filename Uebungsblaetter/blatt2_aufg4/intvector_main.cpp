@@ -7,32 +7,24 @@
 
 #include "IntVector.h"
 
-void testAssignOperator()
+void copyassign()
 {
-	IntVector test1(17);
-	IntVector test2(12);
-	for(size_t i = 0; i < test1.size(); i++)
+	IntVector v1(17);
+	for(size_t i = 0; i < v1.size(); i++)
 	{
-		test1.at(i) = i;
+		v1.at(i) = i;
 	}
-	for(size_t i = 0; i < test2.size(); i++)
-	{
-		test2.at(i) = 3*i;
-	}
-	test1.out();
-	test2.out();
-
-	std::cout << std::endl <<  "after assigning" << std::endl << std::endl;
-
-	test1 = test2;
-	test1.out();
-	test2.out();
-
+	IntVector v2(v1);
+	IntVector v3(10);
+	v3 = v1;
+	v1.out();
+	v2.out();
+	v3.out();
 }
 
 int main(int argc, char* argv[])
 {
-	testAssignOperator();
+	copyassign();
 }
 
 

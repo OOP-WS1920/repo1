@@ -7,27 +7,32 @@
 
 #include "IntVector.h"
 
-IntVector::IntVector(size_t size) {
+IntVector::IntVector(size_t size)
+{
 	_arraySize = size;
 	_intArray = new int[_arraySize];
 }
 
-IntVector::~IntVector() {
+IntVector::~IntVector()
+{
 	delete[] _intArray;
 }
 
-size_t IntVector::size() {
+size_t IntVector::size()
+{
 	return _arraySize;
 }
 
-int& IntVector::at(size_t idx) {
-	if(idx < 0 || idx > _arraySize)
+int& IntVector::at(size_t idx)
+{
+	if(idx < 0 || idx >= _arraySize)
 		throw std::runtime_error("index out of range");
 	else
 		return _intArray[idx];
 }
 
-void IntVector::out() {
+void IntVector::out()
+{
 	for(size_t i = 0; i < _arraySize; i++)
 	{
 		std::cout << _intArray[i] << " ";
@@ -50,5 +55,12 @@ IntVector& IntVector::operator= (const IntVector& other)
 	return *this;
 }
 
-IntVector::IntVector(const IntVector&) {
+IntVector::IntVector(const IntVector& other)
+{
+	_arraySize = other._arraySize;
+	_intArray = new int[_arraySize];
+	for(size_t i = 0; i < _arraySize; i++)
+	{
+		_intArray[i] = other._intArray[i];
+	}
 }
