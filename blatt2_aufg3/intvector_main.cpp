@@ -10,14 +10,14 @@
 void klappt()
 {
 	IntVector test(17);
-	for(size_t i = 0; i < 17; i++)
+	for(size_t i = 0; i < test.size(); i++)
 	{
 		test.at(i) = i;
 	}
 	std::cout << test.size() << std::endl << std::endl;
 	test.out();
 	std::cout << std::endl;
-	for(size_t i = 0; i < 17; i+=2)
+	for(size_t i = 0; i < test.size(); i+=2)
 	{
 		test.at(i) = i + 42;
 	}
@@ -28,7 +28,7 @@ void klappt()
 void crash()
 {
 	IntVector test(17);
-	for(size_t i = 0; i < 17; i++)
+	for(size_t i = 0; i < test.size(); i++)
 	{
 		test.at(i) = i;
 	}
